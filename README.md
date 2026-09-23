@@ -5,16 +5,10 @@ AppImage (see `Dockerfile`), pinned by release tag and checksum-verified,
 plus `potrace` for tracing raster artwork into vector outlines.
 
 ```sh
-# amd64
-podman pull ghcr.io/brhelwig/freecadcmd:latest-amd64
-podman run --rm ghcr.io/brhelwig/freecadcmd:latest-amd64 freecadcmd --version
-
-# arm64
-podman pull ghcr.io/brhelwig/freecadcmd:latest-arm64
-podman run --rm ghcr.io/brhelwig/freecadcmd:latest-arm64 freecadcmd --version
+podman pull ghcr.io/brhelwig/freecadcmd:latest
+podman run --rm ghcr.io/brhelwig/freecadcmd:latest freecadcmd --version
 ```
 
 Built for `linux/amd64` and `linux/arm64` on every push to `main`, weekly,
-and on manual dispatch. Each platform is published under its own tag
-(`:latest-amd64`, `:latest-arm64`) rather than a combined multi-arch
-manifest — pull the tag matching your host's architecture.
+and on manual dispatch. `:latest` is a multi-arch manifest, so the same tag
+pulls the image for your host's architecture.
