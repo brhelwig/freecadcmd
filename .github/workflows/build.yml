@@ -106,5 +106,4 @@ jobs:
     steps:
       - uses: dataaxiom/ghcr-cleanup-action@d52806a0dc70b430571a37da1fde39733ffd640f
         with:
-          delete-tags: latest-amd64,latest-arm64
           delete-untagged: true
