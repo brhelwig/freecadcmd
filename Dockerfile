@@ -10,7 +10,7 @@
 
 ARG FREECAD_VERSION=1.1.3
 
-FROM debian:bookworm-slim AS fetch
+FROM debian:trixie-slim AS fetch
 ARG FREECAD_VERSION
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -35,7 +35,7 @@ RUN set -eu; \
     "./$name" --appimage-extract >/dev/null; \
     mv squashfs-root /opt/freecad
 
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 # The AppImage carries its own Python and libraries but not fonts. potrace
 # is the standalone bitmap-to-vector tracer CAD workflows use to turn raster
